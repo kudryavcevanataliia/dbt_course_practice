@@ -1,0 +1,31 @@
+sources:
+  - name: demo_src
+    description: Данные из БД авиаперелетов
+    tables:
+      - name: aircrafts
+        description: Модели самолетов
+        columns:
+          - name: aircraft code
+            description: Код модели самолета
+          - name: model
+            description: Название модели самолета
+          - name: range
+            description: Неизвестное поле
+      - name: airports
+        description: Аэропорты
+      - name: seats
+        description: Места в самолетах
+      - name: bookings
+        description: Бронирования
+        freshness: 
+          warn_after: {count: 600000, period: hour}
+          error_after: {count: 10000, period: day}
+          filter: current_timestamp::date - book_date::date < 30000
+        loaded_at_field: book_date::timestamp
+      - name: boarding_passes
+        description: Посадочные талоны
+      - name: flights
+        description: Рейсы
+      - name: ticket_flights
+        description: Билеты
+    
