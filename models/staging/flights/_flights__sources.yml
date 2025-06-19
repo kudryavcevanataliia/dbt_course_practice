@@ -28,4 +28,6 @@ sources:
         description: Рейсы
       - name: ticket_flights
         description: Билеты
+      - name: tickets
+        description: Билеты
     
