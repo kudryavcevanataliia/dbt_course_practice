@@ -1,0 +1,14 @@
+models:
+  - name: fct_bookings
+    description: Факты бронирований
+    docs:
+      show: true
+      node_color: red
+    latest version: 1
+    versions:
+      - v: 1
+  - name: fct_flights
+    description: Факты полетов
+    docs:
+      show: true
+      node_color: yellow
